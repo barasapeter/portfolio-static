@@ -1,0 +1,190 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: "liga", "kern";
+}
+
+.font-mono {
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.2em;
+    background: currentColor;
+    margin-left: 2px;
+    vertical-align: -0.2em;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #10b981;
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+.link-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #10b981;
+    transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+    width: 100%;
+}
+
+#terminal {
+    font-family: monospace;
+    font-size: 14px;
+    cursor: text;
+    outline: none;
+    user-select: none;
+}
+
+.prompt {
+    color: #6b7280;
+}
+
+.input {
+    color: #22c55e;
+    display: inline;
+}
+
+.placeholder {
+    color: #9ca3af;
+    display: inline;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.2em;
+    background: currentColor;
+    vertical-align: -0.2em;
+    animation: blink 1s steps(1) infinite;
+    margin: 0;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#hiddenInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#terminal-wrapper {
+  max-width: 680px;
+}
+
+#terminal {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(250, 250, 250, 0.7);
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.2;
+
+  cursor: text;
+  user-select: none;
+}
+
+#terminal:focus {
+  outline: none;
+  border-color: rgba(34, 197, 94, 0.35); /* brand-ish green vibe */
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12), 0 10px 26px rgba(0,0,0,0.06);
+}
+
+#terminal .prompt {
+  color: rgba(16, 185, 129, 0.95); /* emerald-ish */
+  letter-spacing: -0.01em;
+}
+
+#input-container {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+}
+
+#terminal .placeholder {
+  color: rgba(115, 115, 115, 0.7);
+}
+
+#terminal .cursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1em;
+  transform: translateY(0.12em);
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 2px;
+  animation: terminal-blink 1s steps(1, end) infinite;
+}
+
+@keyframes terminal-blink {
+  50% { opacity: 0; }
+}
+
+.dark #terminal {
+  background: rgba(10, 10, 10, 0.55);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.dark #terminal:focus {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.14), 0 12px 32px rgba(0,0,0,0.45);
+}
+
+.dark #terminal .placeholder {
+  color: rgba(163, 163, 163, 0.55);
+}
+
+.dark #terminal .cursor {
+  background: rgba(255, 255, 255, 0.65);
+}
